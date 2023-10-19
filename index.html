@@ -1,0 +1,60 @@
+<!--
+ * @Description: 
+ * @Author: Sunly
+ * @Date: 2023-10-19 03:29:30
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio API Demo</title>
+    <style>
+      #pos-container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border: 1px solid #ccc;
+        box-sizing: content-box;
+        user-select: none;
+      }
+      #mid-pos {
+        position: absolute;
+        top: calc(200px - 5px);
+        left: calc(200px - 5px);
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255, 0, 0, 0.3);
+        border-radius: 50%;
+      }
+      #cur-pos {
+        position: absolute;
+        top: calc(200px - 10px);
+        left: calc(200px - 10px);
+        width: 20px;
+        height: 20px;
+        background-color: rgba(135, 206, 235, 0.6);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>播放</h1>
+    <input type="file" id="input" accept="audio/*" />
+    <div id="music-time">
+      <span id="music-current">00:00</span>
+      /
+      <span id="music-total">--:--</span>
+    </div>
+    <div id="sample-rate"></div>
+    <input type="range" id="volume" min="0" max="1" step="0.1" />
+    <!-- <button id="play">播放</button> -->
+    <div id="pos-container">
+      <div id="mid-pos"></div>
+      <div id="cur-pos"></div>
+    </div>
+  </body>
+
+  <script src="./audioContext.js"></script>
+</html>
